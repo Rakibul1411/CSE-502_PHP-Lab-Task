@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Example</title>
+</head>
+<body>
+
+    <h2 id="myText">Hello, this is a toggle example!</h2>
+
+    <!-- Button to trigger the toggle function -->
+    <button onclick="toggleElement('myText')">Toggle Text</button>
+
+    <script>
+        function toggleElement(elementId) {
+            let element = document.getElementById(elementId);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

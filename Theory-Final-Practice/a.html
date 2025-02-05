@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iframe Example</title>
+</head>
+<body>
+  <ul id="list">
+    <li><a href="link1.html" class="link_one">Link Number One</a></li>
+    <li><a href="link2.html">Link Number Two</a></li>
+    <li><a href="link3.html">Link Number Three</a></li>
+    <li><a href="link4.html">Link Number Four</a></li>
+    <li><a href="link5.html" id="link_5">Link Number Five</a></li>
+  </ul>
+
+  <script>
+    let list = document.getElementById('list');
+
+    let newListItem = document.createElement('li');
+
+    let newLink = document.createElement('a');
+
+    newLink.href = 'link6.html';
+    newLink.id = 'link_6';
+    newLink.innerText = 'Link Number Six';
+
+    newListItem.appendChild(newLink);
+    list.appendChild(newListItem);
+  </script>
+</body>
+</html>

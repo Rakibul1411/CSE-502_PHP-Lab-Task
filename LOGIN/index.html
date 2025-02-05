@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>outerHTML Example</title>
+</head>
+<body>
+    <div id="content">
+        <p>This is a paragraph inside the content div.</p>
+    </div>
+
+    <button id="getOuterHTML">Get outerHTML</button>
+
+    <script>
+        var contentDiv = document.getElementById("content");
+        var getButton = document.getElementById("getOuterHTML");
+
+        getButton.addEventListener("click", function() {
+            alert("Current outerHTML: " + contentDiv.outerHTML);
+        });
+    </script>
+</body>
+</html>
