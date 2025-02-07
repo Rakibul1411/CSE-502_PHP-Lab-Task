@@ -86,16 +86,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label>Username:</label>
             <input type="text" name="username" required>
         </div>
+
+        <br>
+        
         <div>
             <label>Password:</label>
             <input type="password" name="password" required>
         </div>
+
+        <br>
+        <!-- <div>
+          <input type="submit" value="Login">
+        </div> -->
+
+        <div>
+          <button type="submit">Login</button>
+        </div>
+
+        <br>
+
         <div>
             <label>
                 <input type="checkbox" name="remember_me"> Remember me
             </label>
         </div>
-        <button type="submit">Login</button>
+        
     </form>
 </body>
 </html>
