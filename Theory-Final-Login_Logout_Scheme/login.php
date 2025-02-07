@@ -35,22 +35,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       // Verify the password
       if ($password === $stored_password) {
           // Set session parameters
+          // if ($remember) {
+          //     $expiryTime = time() + 10; // Set expiry time (e.g., 10 seconds for testing)
+          //     session_set_cookie_params($expiryTime - time()); // Set session cookie expiry
+          // }
+
           if ($remember) {
-              $expiryTime = time() + 10; // Set expiry time (e.g., 10 seconds for testing)
-              session_set_cookie_params($expiryTime - time()); // Set session cookie expiry
+            $currentTime = time();
+            $expiryTime = $currentTime + 10;
+            session_set_cookie_params($expiryTime - $currentTime); // Set session cookie expiry
+            // Set cookies for "Remember Me"
+            setcookie("user_id", $user_id, $expiryTime, "/");
+            setcookie("username", $username, $expiryTime, "/");
+            setcookie("expires", $expiryTime, $expiryTime, "/");
           }
 
           session_start();
           session_regenerate_id(true); // Prevent session fixation
           $_SESSION['user_id'] = $user_id;
-          $_SESSION['username'] = $username;
-
-          if ($remember) {
-              // Set cookies for "Remember Me"
-              setcookie("user_id", $user_id, $expiryTime, "/");
-              setcookie("username", $username, $expiryTime, "/");
-              setcookie("expires", $expiryTime, $expiryTime, "/");
-          }
+          // $_SESSION['username'] = $username;
 
           header("Location: index.php");
           exit;
