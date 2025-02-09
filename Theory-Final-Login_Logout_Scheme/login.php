@@ -16,7 +16,7 @@ echo "Connected successfully";
 
 $error = '';
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $username = $_POST['username'];
   $password = $_POST['password'];
   $remember = isset($_POST['remember_me']);
@@ -79,7 +79,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <?php if ($error): ?>
-        <p style="color: red;"><?php echo htmlspecialchars($error); ?></p>
+        <p style="color: red;">
+          <?php echo htmlspecialchars($error); ?>
+        </p>
     <?php endif; ?>
     <form method="post">
         <div>
