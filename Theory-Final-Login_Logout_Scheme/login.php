@@ -80,7 +80,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <?php if ($error): ?>
         <p style="color: red;">
-          <?php echo htmlspecialchars($error); ?>
+          <?php 
+            echo htmlspecialchars($error); 
+          ?>
         </p>
     <?php endif; ?>
     <form method="post">
